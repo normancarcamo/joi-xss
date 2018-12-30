@@ -11,7 +11,10 @@
     "url": "git+https://github.com/normancarcamo/joi-xss.git"
   },
   "author": "Norman Carcamo",
-  "license": "ISC",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "bugs": {
     "url": "https://github.com/normancarcamo/joi-xss/issues"
   },

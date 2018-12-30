@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- lts/*
+deploy:
+  provider: npm
+  email: normancarcamo@gmail.com
+  api_key:
+    secure: Dj64aE+CduYsSeSmjd2QJAP75fbe5jXLL9ESn2w2AKocoiYmMzHRjbkRDimk5yB0/PAvMruY34byAxqJcFTTF5yVbBVDffYLH2ArVIEPSYxUwHjxZEx6BQJ+0sowi23bCCphR0PTBBZ6MPLjdbZUvz+qocsTy0T5czd746Pw9gSi0/4k34SnGLj++7iTBWzTi8oRz6jeAq0lTyS+vw96ix6fiCevdjUJ0zrSUsyEi+GENS9htYT8OY6wPbNnM39kz2MqKzgUhsivMrisQfWEqEnvC1ndA9bvqUQDA/naKXlAqX4irElfLhgDBkHoH7R/Sj0yBqHl+GG+eVehQZjmJKJgrqMy0UTVY7rsQIZHG7EReKk/9QmfOQJhyDG6DBk0CrBIdB5Xau9ossslAe916pUFuoUplOhk7DB6awF+s4IlsB77R74hodsHhqRi2F9WoY4Z/5UDHjVIGuFRF5SIfrmXzNbW21kZWc/V3DW2x8UyScedkQ8IUjFHOfY3gyCh37Jip5jwU86zGwAufL18KGw7HhLU4mtmqHi6cUn4ucIn8X1cfUo5L2yS5uazQ6GpPTc6cIpfEwsWlHC5ot360mlBEcpfrcpVAd8RVEEsdob3EcF1iNI/D7aqyRbO1i/M3ycVHDTTwWAfmiJooLgWi1Fv/0KIqg551ffMrlfWk+k=
+  on:
+    tags: true
+    branch: master
