@@ -6,8 +6,12 @@ const is = {
     if (Object.prototype.toString.call(x) === "[object Object]") {
       return true;
     } else {
-      let prototype = Object.getPrototypeOf(x);
-      return prototype === null || prototype === Object.prototype;
+      if (x === null || x === undefined) {
+        return false;
+      } else {
+        let prototype = Object.getPrototypeOf(x);
+        return prototype === null || prototype === Object.prototype;
+      }
     }
   }
 };

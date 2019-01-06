@@ -25,7 +25,7 @@ describe("joi-xss", () => {
     let input = { name: "<p>hola</p>" };
 
     // When:
-    let { value } = Joi.object().unknown(true).xss().validate(input);
+    let { value, error } = Joi.object().unknown(true).xss().validate(input);
 
     // Then:
     expect(value.name).toBe("&lt;p&gt;hola&lt;/p&gt;");
@@ -90,7 +90,9 @@ describe("joi-xss", () => {
           element2: "<script>ujum</script>",
           element3: "<i>nope</i>",
           element4: [
-            "canls", "<iframe>listo</iframe>"
+            "canls", "<iframe>listo</iframe>",
+            { nothing: null },
+            [ undefined ]
           ]
         },
         34,
