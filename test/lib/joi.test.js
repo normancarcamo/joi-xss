@@ -25,7 +25,7 @@ describe("joi-xss", () => {
     let input = { name: "<p>hola</p>" };
 
     // When:
-    let { value, error } = Joi.object().unknown(true).xss().validate(input);
+    let { value } = Joi.object().unknown(true).xss().validate(input);
 
     // Then:
     expect(value.name).toBe("&lt;p&gt;hola&lt;/p&gt;");
