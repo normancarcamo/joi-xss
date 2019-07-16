@@ -4,7 +4,8 @@
   "description": "joi xss",
   "main": "index.js",
   "scripts": {
-    "test": "jest --config test/config/jest.config.js --detectOpenHandles"
+    "test": "jest --config test/config/jest.config.js --detectOpenHandles",
+    "lint": "eslint index.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,9 @@
     "@babel/runtime": "^7.2.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "*",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb-base": "^13.2.0",
+    "eslint-plugin-import": "^2.18.0",
     "jest": "*",
     "jest-chain": "^1.0.5",
     "jest-extended": "^0.11.0",

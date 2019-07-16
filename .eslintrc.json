@@ -1,0 +1,8 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "no-param-reassign": "off",
+    "no-restricted-syntax": "off",
+    "no-unused-vars": "off"
+  }
+}
