@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --config test/config/jest.config.js --detectOpenHandles",
-    "lint": "eslint index.js"
+    "lint": "eslint . --ext js --fix --quiet"
   },
   "repository": {
     "type": "git",
