@@ -14,7 +14,7 @@ const is = {
   },
 };
 
-module.exports = function (type) {
+module.exports = (type) => {
   function deep(value, args) {
     if (is.object(value)) {
       for (const key in value) {
@@ -36,20 +36,33 @@ module.exports = function (type) {
   }
 
   return joi => ({
+    type,
     base: joi[type](),
-    name: type,
-    language: { xss: '{{msg}}' },
-    rules: [{
-      name: 'xss',
-      params: { args: joi.any().optional() },
-      validate: ({ args }, value, state, options) => {
-        if (type === 'object' || type === 'array') {
-          deep(value, { whiteList: [], ...args });
-        } else {
-          value = xss(value, { whiteList: [], ...args });
-        }
-        return value;
+    rules: {
+      xss: {
+        method(args) {
+          return this.$_addRule({
+            name: 'xss',
+            args: { args },
+          });
+        },
+        args: [
+          {
+            name: 'args',
+            assert: joi.any()
+              .optional(),
+            message: 'arg',
+          },
+        ],
+        validate(value, helper, args, options) {
+          if (type === 'object' || type === 'array') {
+            deep(value, { whiteList: [], ...args.args });
+          } else {
+            value = xss(value, { whiteList: [], ...args.args });
+          }
+          return value;
+        },
       },
-    }],
+    },
   });
 };
